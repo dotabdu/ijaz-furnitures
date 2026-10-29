@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ijaz Furnitures — Showroom & Manufacturing, Daska</title>
+<meta name="description" content="Ijaz Furnitures, Daska. Furniture showroom and manufacturing. Sofas, beds, dining, wardrobes, office and complete home / wedding sets.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  button,a,input{ -webkit-tap-highlight-color:transparent; touch-action:manipulation; user-select:none; -webkit-user-select:none; }
+  input{ user-select:text; -webkit-user-select:text; }
+  html{scroll-behavior:smooth}
+  body{background:#faf8f3;color:#1d1a15;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6;font-size:16px}
+  .wrap{max-width:680px;margin:0 auto;padding:0 18px 110px;text-align:center}
+  header{padding:18px 0 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .brand{display:flex;align-items:center;gap:10px;text-align:left}
+  .brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0}
+  .logo{font-size:20px;font-weight:900;line-height:1.1}
+  .logo span{color:#8a6d2f}
+  .tag{color:#6b5f4d;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+  .lang{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+  .lang button{border:none;background:#e8e0cf;padding:8px 11px;border-radius:999px;cursor:pointer;font-size:13px;font-weight:700;color:#1d1a15}
+  .lang button.active{background:#8a6d2f;color:#fff}
+  .cover{width:100%;height:auto;display:block;border-radius:14px}
+  h1{font-size:36px;line-height:1.1;min-height:118px;display:flex;align-items:center;justify-content:center;margin:24px 0 10px}
+  h2{font-size:22px;margin:36px 0 8px}
+  p,li{font-size:16px;color:#33302a}
+  .lead{font-size:15px;color:#6b5f4d;min-height:66px}
+  a{color:#8a6d2f;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+  ul,ol{display:block;text-align:center;margin:8px auto;padding-left:0;list-style-position:inside}
+  li{margin:6px 0}
+  .btn{display:inline-flex;align-items:center;justify-content:center;height:44px;background:#8a6d2f;color:#fff;font-weight:600;padding:0 20px;border-radius:999px;text-decoration:none;line-height:1.2;text-align:center;font-size:15px;letter-spacing:.2px}
+  .btn-light{background:#2e2115;color:#fff;border:none}
+  .btn-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0}
+  .box{border:1px solid #e0d6c2;border-radius:18px;background:#fff;padding:22px;margin-top:14px;text-align:center;overflow:hidden}
+  body,.wrap{overflow-x:hidden}
+  h2,b{overflow-wrap:break-word;word-break:break-word}
+  .box form{text-align:center}
+  .box input{text-align:center}
+  .box .btn-row{justify-content:center}
+  .contact{margin-top:36px;padding-top:20px;border-top:2px solid #1d1a15;text-align:left}
+  .contact p{margin:10px 0}
+  .contact b{display:block;font-size:13px;color:#6b5f4d;text-transform:uppercase;letter-spacing:1px}
+  footer{margin-top:36px;color:#6b5f4d;font-size:14px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;justify-content:center}
+  .pill-opt{border:none;background:#f0ead9;padding:8px 13px;border-radius:999px;cursor:pointer;font-size:13px;font-weight:600;color:#33302a;max-width:100%;line-height:1.3;text-align:center;white-space:normal}
+  .pill-opt.active{background:#8a6d2f;color:#fff}
+  .bubbles{position:fixed;right:12px;bottom:calc(76px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:8px;z-index:50}
+  .bubble{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:16px;text-decoration:none}
+  .bubble-wa{background:#25D366}
+  .bubble-fb{background:#1877F2}
+  @media(max-width:600px){
+    .wrap{padding:0 14px 110px}
+    header{flex-direction:column;text-align:center}
+    .brand{justify-content:center}
+    .lang{width:100%;justify-content:center}
+    .lang button{flex:1;padding:9px 6px}
+    h1{font-size:32px;min-height:106px}
+    .cover{height:auto}
+    .bubble{width:40px;height:40px;font-size:15px}
+    .bubbles{bottom:calc(72px + env(safe-area-inset-bottom));right:10px}
+    .btn{flex:1 1 100px;height:44px;font-size:14px;padding:0 10px}
+    .box{padding:16px 14px}
+    .box .btn-row .btn{flex:1 1 100%;white-space:nowrap}
+    .pills{flex-direction:column;align-items:center;padding-right:0}
+    .pill-opt{max-width:100%;flex:0 1 auto;min-width:0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img src="logo.jpg" alt="Ijaz Furnitures logo" width="48" height="48" fetchpriority="high">
+      <div>
+        <div class="logo">IJAZ <span>FURNITURES</span></div>
+        <div class="tag" data-en="Showroom &amp; Manufacturing — Daska" data-urdu="شو روم اور مینوفیکچرنگ — ڈسکہ" data-roman="Showroom aur Manufacturing — Daska">Showroom &amp; Manufacturing — Daska</div>
+      </div>
+    </div>
+    <div class="lang">
+      <button id="btnEn" class="active" onclick="setLang('en')">English</button>
+      <button id="btnUrdu" onclick="setLang('urdu')">Urdu</button>
+      <button id="btnRoman" onclick="setLang('roman')">Roman Urdu</button>
+    </div>
+  </header>
+
+  <img class="cover" src="cover.jpg" alt="Ijaz Furnitures showroom sofa set" width="1200" height="600" fetchpriority="high">
+
+  <h1 data-en="Furniture for your home, made in Daska." data-urdu="آپ کے گھر کے لیے فرنیچر، ڈسکہ میں بنا ہوا۔" data-roman="Aapke ghar ke liye furniture, Daska mein bana hua.">Furniture for your home, made in Daska.</h1>
+  <p class="lead" dir="auto" data-en="See it in the showroom, or get it made to your choice. Sofa, bed, dining, wardrobe and complete wedding set — all in one place." data-urdu="شو روم میں دیکھ کر لو، یا اپنی پسند پر بنوا لو۔ صوفہ، بیڈ، ڈائننگ، وارڈروب اور پورا ویڈنگ سیٹ — سب ایک جگہ۔" data-roman="Showroom mein dekh kar lo, ya apni pasand par banwa lo. Sofa, bed, dining, wardrobe aur poora wedding set — sab aik jagah.">See it in the showroom, or get it made to your choice. Sofa, bed, dining, wardrobe and complete wedding set — all in one place.</p>
+  <div class="btn-row">
+    <a class="btn" href="#order" data-en="Order / Enquiry" data-urdu="آرڈر / انکوائری" data-roman="Order / Enquiry">Order / Enquiry</a>
+    <a class="btn btn-light" href="https://wa.me/923338163650">WhatsApp</a>
+    <a class="btn btn-light" href="https://web.facebook.com/profile.php?id=61596204893222&sk=about">Facebook</a>
+  </div>
+
+  <h2 data-en="What we make" data-urdu="ہم کیا بناتے ہیں" data-roman="Hum kya banate hain">What we make</h2>
+  <ul>
+    <li data-en="Sofa Sets" data-urdu="صوفہ سیٹس" data-roman="Sofa Sets">Sofa Sets</li>
+    <li data-en="Bed and Bedroom Sets" data-urdu="بیڈ اور بیڈروم سیٹس" data-roman="Bed and Bedroom Sets">Bed and Bedroom Sets</li>
+    <li data-en="Dining Tables" data-urdu="ڈائننگ ٹیبلز" data-roman="Dining Tables">Dining Tables</li>
+    <li data-en="Wardrobe and Dressing Tables" data-urdu="وارڈروب اور ڈریسنگ ٹیبلز" data-roman="Wardrobe and Dressing Tables">Wardrobe and Dressing Tables</li>
+    <li data-en="Office Furniture" data-urdu="آفس فرنیچر" data-roman="Office Furniture">Office Furniture</li>
+    <li data-en="Complete Home and Wedding Sets" data-urdu="مکمل گھر اور ویڈنگ سیٹس" data-roman="Complete Home and Wedding Sets">Complete Home and Wedding Sets</li>
+  </ul>
+
+  <h2 data-en="Custom order" data-urdu="کسٹم آرڈر" data-roman="Custom order">Custom order</h2>
+  <ol>
+    <li data-en="Send your design, size and colour on WhatsApp." data-urdu="اپنا ڈیزائن، سائز اور رنگ واٹس ایپ پر بھیجو۔" data-roman="Apna design, size aur colour WhatsApp par bhejo.">Send your design, size and colour on WhatsApp.</li>
+    <li data-en="We will confirm the design and price." data-urdu="ہم ڈیزائن اور قیمت کنفرم کریں گے۔" data-roman="Hum design aur price confirm karenge.">We will confirm the design and price.</li>
+    <li data-en="Your order will be made in our manufacturing." data-urdu="آپ کا آرڈر ہماری مینوفیکچرنگ میں بنے گا۔" data-roman="Aapka order apni manufacturing mein banega.">Your order will be made in our manufacturing.</li>
+    <li data-en="Pick it up from the showroom." data-urdu="شو روم سے لے جاؤ۔" data-roman="Showroom se le jao.">Pick it up from the showroom.</li>
+  </ol>
+
+  <div class="btn-row">
+    <a class="btn" href="#order">Order / Enquiry</a>
+    <a class="btn btn-light" href="https://wa.me/923338163650">WhatsApp</a>
+    <a class="btn btn-light" href="https://web.facebook.com/profile.php?id=61596204893222&sk=about">Facebook</a>
+  </div>
+
+  <h2 data-en="Visit us" data-urdu="ہم سے ملیں" data-roman="Showroom par aayein">Visit us</h2>
+  <p data-en="Main Gujranwala Road, opposite Baqri Petrol Pump, Daska" data-urdu="مین گوجرانوالہ روڈ، بقری پیٹرول پمپ کے سامنے، ڈسکہ" data-roman="Main Gujranwala Road, opposite Baqri Petrol Pump, Daska">Main Gujranwala Road, opposite Baqri Petrol Pump, Daska</p>
+  <p data-en="Monday to Thursday: 10 AM – 9 PM" data-urdu="پیر سے جمعرات: صبح 10 بجے سے رات 9 بجے تک" data-roman="Peer se Jumerat: subah 10 baje se raat 9 baje tak">Monday to Thursday: 10 AM – 9 PM</p>
+  <p data-en="Friday: 12 PM – 9 PM" data-urdu="جمعہ: دوپہر 12 بجے سے رات 9 بجے تک" data-roman="Juma: dopahar 12 baje se raat 9 baje tak">Friday: 12 PM – 9 PM</p>
+  <p data-en="Saturday to Sunday: 10 AM – 9 PM" data-urdu="ہفتہ سے اتوار: صبح 10 بجے سے رات 9 بجے تک" data-roman="Hafta se Itwar: subah 10 baje se raat 9 baje tak">Saturday to Sunday: 10 AM – 9 PM</p>
+  <p data-en="Wheelchair accessible. 3–5 car parking." data-urdu="وہیل چیئر کے لیے قابل رسائی۔ 3 سے 5 کار پارکنگ۔" data-roman="Wheelchair accessible. 3-5 car parking.">Wheelchair accessible. 3–5 car parking.</p>
+  <p><a href="https://www.google.com/maps/search/?api=1&query=Ijaz+Furnitures+Main+Gujranwala+Road+Daska" data-en="Get directions on Google Maps" data-urdu="گوگل میپس پر راستہ دیکھیں" data-roman="Google Maps par rasta dekhein">Get directions on Google Maps</a></p>
+
+  <h2 data-en="Showroom Location Map" data-urdu="شو روم کا نقشہ" data-roman="Showroom ka Map">Showroom Location Map</h2>
+  <p data-en="Main Gujranwala Road, opposite Baqri Petrol Pump, Daska — only our showroom is on this map, no other shop." data-urdu="مین گوجرانوالہ روڈ، بقری پیٹرول پمپ کے سامنے، ڈسکہ — اس نقشے پر صرف ہمارا شو روم ہے، کوئی اور دکان نہیں۔" data-roman="Main Gujranwala Road, opposite Baqri Petrol Pump, Daska — is map par sirf hamara showroom hai, koi aur shop nahi.">Main Gujranwala Road, opposite Baqri Petrol Pump, Daska — only our showroom is on this map, no other shop.</p>
+  <img src="map.jpg" alt="Ijaz Furnitures location map - Main Gujranwala Road, opposite Baqri Petrol Pump, Daska" width="1000" height="666" loading="lazy" decoding="async" style="width:100%;height:320px;object-fit:cover;object-position:center;border:1px solid #c9bfae;border-radius:14px;margin-top:12px">
+  <p style="margin-top:10px"><a href="https://www.google.com/maps/search/?api=1&query=Ijaz+Furnitures+Main+Gujranwala+Road+Daska" data-en="Open full map in Google Maps" data-urdu="گوگل میپس میں مکمل نقشہ کھولیں" data-roman="Google Maps mein poora map kholein">Open full map in Google Maps</a></p>
+
+  <div class="box" id="order">
+  <h2 style="margin-top:0" data-en="Order / Enquiry Form" data-urdu="آرڈر / انکوائری فارم" data-roman="Order / Enquiry Form">Order / Enquiry Form</h2>
+  <p data-en="Fill this info, then send it via WhatsApp or Email." data-urdu="یہ معلومات بھرو، پھر واٹس ایپ یا ای میل سے بھیجو۔" data-roman="Ye info bhar do, phir neeche WhatsApp ya Email se bhej do.">Fill this info, then send it via WhatsApp or Email.</p>
+  <form id="orderForm" style="margin-top:14px">
+    <p><b data-en="Name" data-urdu="نام" data-roman="Name">Name</b><br><input id="fName" type="text" placeholder="Apna naam" required style="width:100%;border:none;border-bottom:1px solid #c9bfae;padding:10px 2px;font-size:16px;background:transparent"></p>
+    <p style="margin-top:12px"><b data-en="Phone / WhatsApp Number" data-urdu="فون / واٹس ایپ نمبر" data-roman="Phone / WhatsApp Number">Phone / WhatsApp Number</b><br><input id="fPhone" type="tel" placeholder="03xx xxxxxxx" required style="width:100%;border:none;border-bottom:1px solid #c9bfae;padding:10px 2px;font-size:16px;background:transparent"></p>
+    <p style="margin-top:12px"><b data-en="City / Area" data-urdu="شہر / علاقہ" data-roman="City / Area">City / Area</b><br><input id="fCity" type="text" placeholder="Daska" style="width:100%;border:none;border-bottom:1px solid #c9bfae;padding:10px 2px;font-size:16px;background:transparent"></p>
+    <p style="margin-top:12px"><b data-en="What do you need?" data-urdu="کیا چاہیے؟" data-roman="Kya chahiye?">What do you need?</b></p>
+    <div class="pills" id="itemPills">
+      <button type="button" class="pill-opt active" data-en="Sofa Set" data-urdu="صوفہ سیٹ" data-roman="Sofa Set" onclick="selectPill('item', this)">Sofa Set</button>
+      <button type="button" class="pill-opt" data-en="Bed / Bedroom Set" data-urdu="بیڈ / بیڈروم سیٹ" data-roman="Bed / Bedroom Set" onclick="selectPill('item', this)">Bed / Bedroom Set</button>
+      <button type="button" class="pill-opt" data-en="Dining Table" data-urdu="ڈائننگ ٹیبل" data-roman="Dining Table" onclick="selectPill('item', this)">Dining Table</button>
+      <button type="button" class="pill-opt" data-en="Wardrobe / Dressing" data-urdu="وارڈروب / ڈریسنگ" data-roman="Wardrobe / Dressing" onclick="selectPill('item', this)">Wardrobe / Dressing</button>
+      <button type="button" class="pill-opt" data-en="Office Furniture" data-urdu="آفس فرنیچر" data-roman="Office Furniture" onclick="selectPill('item', this)">Office Furniture</button>
+      <button type="button" class="pill-opt" data-en="Complete Home / Wedding Set" data-urdu="مکمل گھر / ویڈنگ سیٹ" data-roman="Complete Home / Wedding Set" onclick="selectPill('item', this)">Complete Home / Wedding Set</button>
+      <button type="button" class="pill-opt" data-en="Custom Order" data-urdu="کسٹم آرڈر" data-roman="Custom Order" onclick="selectPill('item', this)">Custom Order</button>
+    </div>
+    <p style="margin-top:12px"><b data-en="Quantity" data-urdu="تعداد" data-roman="Quantity">Quantity</b><br><input id="fQty" type="text" placeholder="1 set" style="width:100%;border:none;border-bottom:1px solid #c9bfae;padding:10px 2px;font-size:16px;background:transparent"></p>
+    <p style="margin-top:12px"><b data-en="Budget (Rs)" data-urdu="بجٹ (روپے)" data-roman="Budget (Rs)">Budget (Rs)</b></p>
+    <div class="pills" id="budgetPills">
+      <button type="button" class="pill-opt active" data-en="Up to 50,000" data-urdu="50,000 تک" data-roman="50,000 tak" onclick="selectPill('budget', this)">Up to 50,000</button>
+      <button type="button" class="pill-opt" data-en="50,000 – 100,000" data-urdu="50,000 – 100,000" data-roman="50,000 – 100,000" onclick="selectPill('budget', this)">50,000 – 100,000</button>
+      <button type="button" class="pill-opt" data-en="100,000 – 200,000" data-urdu="100,000 – 200,000" data-roman="100,000 – 200,000" onclick="selectPill('budget', this)">100,000 – 200,000</button>
+      <button type="button" class="pill-opt" data-en="More than 200,000" data-urdu="200,000 سے زیادہ" data-roman="200,000 se zyada" onclick="selectPill('budget', this)">More than 200,000</button>
+      <button type="button" class="pill-opt" data-en="Will tell budget later" data-urdu="بجٹ بعد میں بتائیں گے" data-roman="Budget baad mein batayenge" onclick="selectPill('budget', this)">Will tell budget later</button>
+    </div>
+    <p style="margin-top:12px"><b data-en="Size, Colour or Design" data-urdu="سائز، رنگ یا ڈیزائن" data-roman="Size, Colour ya Design">Size, Colour or Design</b><br><input id="fDetail" type="text" placeholder="L-shape, brown, 7 seater" style="width:100%;border:none;border-bottom:1px solid #c9bfae;padding:10px 2px;font-size:16px;background:transparent"></p>
+    <p style="margin-top:12px"><b data-en="Needed by (optional)" data-urdu="کب تک چاہیے؟" data-roman="Kab tak chahiye? (optional)">Needed by (optional)</b><br><input id="fDate" type="text" placeholder="Next month" style="width:100%;border:none;border-bottom:1px solid #c9bfae;padding:10px 2px;font-size:16px;background:transparent"></p>
+    <p style="margin-top:12px"><b data-en="Extra Message (optional)" data-urdu="اضافی پیغام" data-roman="Extra Message (optional)">Extra Message (optional)</b><br><input id="fMsg" type="text" placeholder="Anything else" style="width:100%;border:none;border-bottom:1px solid #c9bfae;padding:10px 2px;font-size:16px;background:transparent"></p>
+    <p style="margin-top:18px"><b data-en="Send this info:" data-urdu="یہ معلومات بھیجو:" data-roman="Ye info bhejo:">Send this info:</b></p>
+    <div class="btn-row" style="justify-content:flex-start">
+      <a class="btn" href="#" onclick="return sendVia('wa')" data-en="Send via WhatsApp" data-urdu="واٹس ایپ سے بھیجو" data-roman="WhatsApp se bhejo">Send via WhatsApp</a>
+      <a class="btn btn-light" href="#" onclick="return sendVia('mail')" data-en="Send via Email" data-urdu="ای میل سے بھیجو" data-roman="Email se bhejo">Send via Email</a>
+    </div>
+  </form>
+  <script>
+    var itemVal = 'Sofa Set';
+    var budgetVal = 'Up to 50,000';
+    function selectPill(kind, btn){
+      var container = document.getElementById(kind === 'item' ? 'itemPills' : 'budgetPills');
+      container.querySelectorAll('.pill-opt').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      if(kind === 'item') itemVal = btn.textContent; else budgetVal = btn.textContent;
+    }
+    /* Haptic + click sound - khud banaya hua, AI voice/sound nahi.
+       Haptic: phone ki native vibration, sirf 12ms ki halki tap.
+       Sound: Web Audio se code se banaya hua soft click, koi AI file nahi. */
+    var audioCtx = null;
+    function playClick(){
+      try{
+        if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if(audioCtx.state === 'suspended') audioCtx.resume();
+        var t = audioCtx.currentTime;
+        var osc = audioCtx.createOscillator();
+        var gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1400, t);
+        osc.frequency.exponentialRampToValueAtTime(700, t + 0.04);
+        gain.gain.setValueAtTime(0.12, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.06);
+        osc.connect(gain); gain.connect(audioCtx.destination);
+        osc.start(t); osc.stop(t + 0.07);
+      }catch(e){}
+    }
+    function tapFeedback(){
+      try{ if(navigator.vibrate) navigator.vibrate(12); }catch(e){}
+      playClick();
+    }
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('.btn, .pill-opt, .lang button, .bubble').forEach(function(el){
+        el.addEventListener('click', tapFeedback);
+      });
+    });
+    function buildText(){
+      var g = function(id){ return document.getElementById(id).value || '-'; };
+      return 'New Order / Enquiry - Ijaz Furnitures\n' +
+        'Name: ' + g('fName') + '\n' +
+        'Phone: ' + g('fPhone') + '\n' +
+        'City / Area: ' + g('fCity') + '\n' +
+        'Item: ' + itemVal + '\n' +
+        'Quantity: ' + g('fQty') + '\n' +
+        'Budget: ' + budgetVal + '\n' +
+        'Size / Colour / Design: ' + g('fDetail') + '\n' +
+        'Needed by: ' + g('fDate') + '\n' +
+        'Message: ' + g('fMsg');
+    }
+    var currentLang = 'en';
+    var placeholders = {
+      en: {fName:'Your name', fCity:'Daska', fQty:'1 set', fDetail:'L-shape, brown, 7 seater', fDate:'Next month', fMsg:'Anything else'},
+      urdu: {fName:'اپنا نام', fCity:'ڈسکہ', fQty:'1 سیٹ', fDetail:'L-shape، براؤن، 7 سیٹر', fDate:'اگلے مہینے', fMsg:'کچھ اور'},
+      roman: {fName:'Apna naam', fCity:'Daska', fQty:'1 set', fDetail:'L-shape, brown, 7 seater', fDate:'Next month', fMsg:'Kuch aur'}
+    };
+    var itemOptions = {
+      en: ['Sofa Set','Bed / Bedroom Set','Dining Table','Wardrobe / Dressing','Office Furniture','Complete Home / Wedding Set','Custom Order'],
+      urdu: ['صوفہ سیٹ','بیڈ / بیڈروم سیٹ','ڈائننگ ٹیبل','وارڈروب / ڈریسنگ','آفس فرنیچر','مکمل گھر / ویڈنگ سیٹ','کسٹم آرڈر'],
+      roman: ['Sofa Set','Bed / Bedroom Set','Dining Table','Wardrobe / Dressing','Office Furniture','Complete Home / Wedding Set','Custom Order']
+    };
+    var budgetOptions = {
+      en: ['Up to 50,000','50,000 – 100,000','100,000 – 200,000','More than 200,000','Will tell budget later'],
+      urdu: ['50,000 تک','50,000 – 100,000','100,000 – 200,000','200,000 سے زیادہ','بجٹ بعد میں بتائیں گے'],
+      roman: ['50,000 tak','50,000 – 100,000','100,000 – 200,000','200,000 se zyada','Budget baad mein batayenge']
+    };
+    function sendVia(kind){
+      if(!document.getElementById('fName').value || !document.getElementById('fPhone').value){
+        alert(currentLang === 'urdu' ? 'براہ کرم اپنا نام اور فون نمبر لکھیں۔' : currentLang === 'roman' ? 'Please apna naam aur phone number likhein.' : 'Please write your name and phone number.');
+        return false;
+      }
+      var text = buildText();
+      if(kind === 'wa'){
+        window.open('https://wa.me/923338163650?text=' + encodeURIComponent(text), '_blank');
+      } else {
+        window.location.href = 'mailto:inquiries.ijazfurnitures@gmail.com?subject=' + encodeURIComponent('New Order / Enquiry - Ijaz Furnitures') + '&body=' + encodeURIComponent(text);
+      }
+      return false;
+    }
+    function setLang(lang){
+      currentLang = lang;
+      var attr = (lang === 'urdu') ? 'data-urdu' : (lang === 'roman') ? 'data-roman' : 'data-en';
+      document.querySelectorAll('[data-en]').forEach(function(el){
+        var v = el.getAttribute(attr);
+        if(v) el.textContent = v;
+      });
+      var ph = placeholders[lang];
+      Object.keys(ph).forEach(function(id){
+        var el = document.getElementById(id);
+        if(el) el.placeholder = ph[id];
+      });
+      var activeItem = document.querySelector('#itemPills .pill-opt.active');
+      if(activeItem) itemVal = activeItem.textContent;
+      var activeBudget = document.querySelector('#budgetPills .pill-opt.active');
+      if(activeBudget) budgetVal = activeBudget.textContent;
+      var itemSel = document.getElementById('fItem');
+      if(itemSel) itemOptions[lang].forEach(function(txt, i){ if(itemSel.options[i]) itemSel.options[i].text = txt; });
+      var budgetSel = document.getElementById('fBudget');
+      if(budgetSel) budgetOptions[lang].forEach(function(txt, i){ if(budgetSel.options[i]) budgetSel.options[i].text = txt; });
+      document.documentElement.lang = (lang === 'urdu') ? 'ur' : 'en';
+      document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+      document.getElementById('btnUrdu').classList.toggle('active', lang === 'urdu');
+      document.getElementById('btnRoman').classList.toggle('active', lang === 'roman');
+    }
+    setLang('en');
+  </script>
+  </div>
+
+  <div class="contact">
+    <h2 style="margin-top:0" data-en="Contact" data-urdu="رابطہ" data-roman="Contact">Contact</h2>
+    <p><b>Call / WhatsApp</b>
+    <a href="tel:+923338163650">0333 8163650</a> &nbsp;|&nbsp;
+    <a href="https://wa.me/923338163650?text=Assalamualaikum%2C%20mujhe%20Ijaz%20Furnitures%20se%20furniture%20ke%20bare%20mein%20poochna%20hai.">Message on WhatsApp</a></p>
+    <p><b>Email</b>
+    <a href="mailto:inquiries.ijazfurnitures@gmail.com">inquiries.ijazfurnitures@gmail.com</a></p>
+    <p><b>Facebook</b>
+    <a href="https://web.facebook.com/profile.php?id=61596204893222&sk=about">Ijaz Furnitures on Facebook</a></p>
+  </div>
+
+  <div class="btn-row">
+    <a class="btn" href="#order">Order / Enquiry</a>
+    <a class="btn btn-light" href="https://wa.me/923338163650">WhatsApp</a>
+    <a class="btn btn-light" href="https://web.facebook.com/profile.php?id=61596204893222&sk=about">Facebook</a>
+  </div>
+
+  <h2 data-en="Why Ijaz Furnitures?" data-urdu="اجاز فرنیچرز کیوں؟" data-roman="Ijaz Furnitures kyun?">Why Ijaz Furnitures?</h2>
+  <ul>
+    <li data-en="45+ Years of Experience" data-urdu="45 سال سے زیادہ کا تجربہ" data-roman="45+ saal ka tajurba">45+ Years of Experience</li>
+    <li data-en="Premium quality furniture" data-urdu="پریمیم کوالٹی فرنیچر" data-roman="Premium quality furniture">Premium quality furniture</li>
+    <li data-en="Best wood quality" data-urdu="بہترین لکڑی کی کوالٹی" data-roman="Best wood quality">Best wood quality</li>
+    <li data-en="Any style you ask for, we will make it that way" data-urdu="جس طرح کا کہیں گے، اسی طرح کا بن جائے گا" data-roman="Jis tarah ka kahenge, usi tarah ka ban jayega">Any style you ask for, we will make it that way</li>
+    <li data-en="Showroom + own manufacturing, all in one place" data-urdu="شو روم + اپنی مینوفیکچرنگ، سب ایک جگہ" data-roman="Showroom + apni manufacturing, sab aik jagah">Showroom + own manufacturing, all in one place</li>
+  </ul>
+
+  <footer>
+    <p>Ijaz Furnitures — Showroom &amp; Manufacturing, Daska.</p>
+  </footer>
+</div>
+<div class="bubbles">
+  <a class="bubble bubble-wa" href="https://wa.me/923338163650" aria-label="WhatsApp">WA</a>
+  <a class="bubble bubble-fb" href="https://web.facebook.com/profile.php?id=61596204893222&sk=about" aria-label="Facebook">f</a>
+</div>
+</body>
+</html>
