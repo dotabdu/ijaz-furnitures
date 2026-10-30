@@ -49,14 +49,11 @@
   .btn-gold{background:#222222;color:#ffffff}
   .btn-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0}
   footer{margin-top:18px;color:#6b5f4d;font-size:14px}
-  .dock{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));display:flex;flex-direction:row;align-items:center;gap:10px;z-index:60;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.88));backdrop-filter:blur(14px);border:1px solid rgba(0,0,0,.06);border-radius:999px;padding:8px;box-shadow:0 10px 22px rgba(0,0,0,.12)}
   .dock-pill{display:inline-flex;align-items:center;justify-content:center;min-width:0;height:42px;padding:0 14px;border-radius:999px;background:#222222;color:#ffffff;font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.12)}
-  .bubbles{display:flex;flex-direction:row;gap:10px}
+  .bubbles{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));display:flex;flex-direction:row;align-items:center;gap:10px;z-index:50;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.88));backdrop-filter:blur(14px);border:1px solid rgba(0,0,0,.06);border-radius:999px;padding:8px;box-shadow:0 10px 22px rgba(0,0,0,.12)}
   .bubble{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 6px 14px rgba(0,0,0,.20)}
   .bubble-wa{background:linear-gradient(180deg,#3ddc74,#1da851)}
   .bubble-fb{background:linear-gradient(180deg,#3b8cff,#1455c8)}
-  .dock{transition:transform .3s ease,opacity .3s ease}
-  .dock.dock-hidden{transform:translate(-50%,140%);opacity:0;pointer-events:none}
   .dragging{box-shadow:0 20px 36px rgba(46,33,21,.30) !important;z-index:200;position:relative}
   #lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;background:rgba(10,7,4,.92);backdrop-filter:blur(10px);padding:20px}
   #lightbox.open{display:flex}
@@ -230,7 +227,7 @@ function playClick(){try{actx=actx||new (window.AudioContext||window.webkitAudio
 document.querySelectorAll(".card img").forEach(function(im){im.addEventListener("click",function(){var lb=document.getElementById("lightbox"),lbi=document.getElementById("lbImg");if(lb&&lbi){lbi.src=im.src;lb.classList.add("open");}});});
 document.querySelectorAll(".btn,.chip,.bubble,.dock-pill").forEach(function(el){el.addEventListener("click",function(){try{if(navigator.vibrate)navigator.vibrate(12);}catch(e){}playClick();});});
 initDrag();
-(function(){var lastY=window.scrollY||0,dock=document.querySelector('.bubbles'),timer=null;if(!dock)return;window.addEventListener('scroll',function(){var y=window.scrollY||0;var atBottom=(window.innerHeight+y>=document.documentElement.scrollHeight-80);if(atBottom){dock.classList.remove('dock-hidden');}else if(y>lastY+5&&y>120){dock.classList.add('dock-hidden');}else if(y<lastY-5){dock.classList.remove('dock-hidden');}lastY=y;clearTimeout(timer);timer=setTimeout(function(){dock.classList.remove('dock-hidden');},800);},{passive:true});})();
+
 </script>
   <div id="lightbox" onclick="this.classList.remove('open')"><button class="lb-close" aria-label="Close">×</button><img id="lbImg" src="" alt="Gallery photo enlarged"></div>
 </body>

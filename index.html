@@ -59,8 +59,6 @@
   #lightbox.open{display:flex}
   #lightbox img{max-width:100%;max-height:85vh;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.60)}
   #lightbox .lb-close{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.40);background:rgba(255,255,255,.15);color:#fff;font-size:20px;font-weight:700;cursor:pointer}
-  .bubbles{transition:transform .3s ease,opacity .3s ease}
-  .bubbles.dock-hidden{transform:translate(-50%,140%);opacity:0;pointer-events:none}
   .dragging{box-shadow:0 20px 36px rgba(46,33,21,.30) !important;z-index:200;position:relative}
   .bubbles{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));display:flex;flex-direction:row;align-items:center;gap:10px;z-index:50;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.88));backdrop-filter:blur(14px);border:1px solid rgba(0,0,0,.06);border-radius:999px;padding:8px;box-shadow:0 10px 22px rgba(0,0,0,.12)}
   .bubble{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 6px 14px rgba(0,0,0,.20)}
@@ -278,7 +276,7 @@
         el.addEventListener('click', tapFeedback);
       });
     });
-    (function(){var lastY=window.scrollY||0,dock=document.querySelector('.bubbles'),timer=null;if(!dock)return;window.addEventListener('scroll',function(){var y=window.scrollY||0;var atBottom=(window.innerHeight+y>=document.documentElement.scrollHeight-80);if(atBottom){dock.classList.remove('dock-hidden');}else if(y>lastY+5&&y>120){dock.classList.add('dock-hidden');}else if(y<lastY-5){dock.classList.remove('dock-hidden');}lastY=y;clearTimeout(timer);timer=setTimeout(function(){dock.classList.remove('dock-hidden');},800);},{passive:true});})();
+    
     function buildText(){
       var g = function(id){ return document.getElementById(id).value || '-'; };
       return 'New Order / Enquiry - Ijaz Furnitures\n' +
