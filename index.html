@@ -278,7 +278,7 @@
         el.addEventListener('click', tapFeedback);
       });
     });
-    (function(){var lastY=window.scrollY||0,dock=document.querySelector('.bubbles');if(!dock)return;window.addEventListener('scroll',function(){var y=window.scrollY||0;if(y>lastY+5&&y>120){dock.classList.add('dock-hidden');}else if(y<lastY-5){dock.classList.remove('dock-hidden');}lastY=y;},{passive:true});})();
+    (function(){var lastY=window.scrollY||0,dock=document.querySelector('.bubbles'),timer=null;if(!dock)return;window.addEventListener('scroll',function(){var y=window.scrollY||0;var atBottom=(window.innerHeight+y>=document.documentElement.scrollHeight-80);if(atBottom){dock.classList.remove('dock-hidden');}else if(y>lastY+5&&y>120){dock.classList.add('dock-hidden');}else if(y<lastY-5){dock.classList.remove('dock-hidden');}lastY=y;clearTimeout(timer);timer=setTimeout(function(){dock.classList.remove('dock-hidden');},800);},{passive:true});})();
     function buildText(){
       var g = function(id){ return document.getElementById(id).value || '-'; };
       return 'New Order / Enquiry - Ijaz Furnitures\n' +

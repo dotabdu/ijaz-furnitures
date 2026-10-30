@@ -230,7 +230,7 @@ function playClick(){try{actx=actx||new (window.AudioContext||window.webkitAudio
 document.querySelectorAll(".card img").forEach(function(im){im.addEventListener("click",function(){var lb=document.getElementById("lightbox"),lbi=document.getElementById("lbImg");if(lb&&lbi){lbi.src=im.src;lb.classList.add("open");}});});
 document.querySelectorAll(".btn,.chip,.bubble,.dock-pill").forEach(function(el){el.addEventListener("click",function(){try{if(navigator.vibrate)navigator.vibrate(12);}catch(e){}playClick();});});
 initDrag();
-(function(){var lastY=window.scrollY||0,dock=document.querySelector('.bubbles');if(!dock)return;window.addEventListener('scroll',function(){var y=window.scrollY||0;if(y>lastY+5&&y>120){dock.classList.add('dock-hidden');}else if(y<lastY-5){dock.classList.remove('dock-hidden');}lastY=y;},{passive:true});})();
+(function(){var lastY=window.scrollY||0,dock=document.querySelector('.bubbles'),timer=null;if(!dock)return;window.addEventListener('scroll',function(){var y=window.scrollY||0;var atBottom=(window.innerHeight+y>=document.documentElement.scrollHeight-80);if(atBottom){dock.classList.remove('dock-hidden');}else if(y>lastY+5&&y>120){dock.classList.add('dock-hidden');}else if(y<lastY-5){dock.classList.remove('dock-hidden');}lastY=y;clearTimeout(timer);timer=setTimeout(function(){dock.classList.remove('dock-hidden');},800);},{passive:true});})();
 </script>
   <div id="lightbox" onclick="this.classList.remove('open')"><button class="lb-close" aria-label="Close">×</button><img id="lbImg" src="" alt="Gallery photo enlarged"></div>
 </body>
